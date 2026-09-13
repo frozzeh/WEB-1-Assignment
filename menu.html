@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Project: KFC Kazakhstan Fan Project | Group: SE-2510 | Page: Food Menu Page (menu.html) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC Kazakhstan — Food Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <!-- Placeholder for the main KFC Logo image -->
+                <img src="images/logo.jpg" alt="KFC Logo" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Main Menu</a></li>
+                    <li><a href="menu.html" class="nav-btn active">Food Menu</a></li>
+                    <li><a href="promos.html" class="nav-btn">Special Offers</a></li>
+                    <li><a href="about.html" class="nav-btn">Our Team</a></li>
+                    <li><a href="schedule.html" class="nav-btn">Location & Schedule</a></li>
+                    <li><a href="contacts.html" class="nav-btn">Reviews & Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Select & Customize Your Dish</h1>
+            
+            <div class="promo-grid">
+                
+                <!-- Menu Item 1: Chefburger -->
+                <div class="promo-card">
+                    <div class="dish-img-container">
+                        <img src="images/chefburger.jpg" alt="Chefburger" class="dish-img">
+                    </div>
+                    <div class="card-title">CHEFBURGER</div>
+                    <p class="card-desc">Juicy chicken fillet, lettuce, tomatoes, and special sauce.</p>
+                    
+                    <ul class="ingredient-list">
+                        <li>Chicken fillet</li>
+                        <li>Fresh lettuce</li>
+                        <li>Tomatoes</li>
+                        <li>Special sauce</li>
+                    </ul>
+
+                    <button class="btn-red open-modal-btn" 
+                            data-name="Chefburger" 
+                            data-price="1800" 
+                            data-img="images/chefburger.jpg">
+                        Customize & Order — 1 800 ₸
+                    </button>
+                </div>
+
+                <!-- Menu Item 2: Twister Wrap -->
+                <div class="promo-card">
+                    <div class="dish-img-container">
+                        <img src="images/twister.jpg" alt="Twister Wrap" class="dish-img">
+                    </div>
+                    <div class="card-title">TWISTER WRAP</div>
+                    <p class="card-desc">Crispy tenders, fresh tomatoes, and mayo in a warm tortilla.</p>
+                    
+                    <ul class="ingredient-list">
+                        <li>Crispy chicken tenders</li>
+                        <li>Fresh tomatoes</li>
+                        <li>Creamy mayo</li>
+                        <li>Warm tortilla</li>
+                    </ul>
+
+                    <button class="btn-red open-modal-btn" 
+                            data-name="Twister Wrap" 
+                            data-price="1400" 
+                            data-img="images/twister.jpg">
+                        Customize & Order — 1 400 ₸
+                    </button>
+                </div>
+
+                <!-- Menu Item 3: Zinger Burger -->
+                <div class="promo-card">
+                    <div class="dish-img-container">
+                        <img src="images/zinger.jpg" alt="Zinger Burger" class="dish-img">
+                    </div>
+                    <div class="card-title">ZINGER BURGER</div>
+                    <p class="card-desc">Spicy chicken breast fillet, fresh lettuce, and mayo.</p>
+                    
+                    <ul class="ingredient-list">
+                        <li>Spicy chicken fillet</li>
+                        <li>Fresh lettuce</li>
+                        <li>Signature mayo</li>
+                        <li>Sesame bun</li>
+                    </ul>
+
+                    <button class="btn-red open-modal-btn" 
+                            data-name="Zinger Burger" 
+                            data-price="1900" 
+                            data-img="images/zinger.jpg">
+                        Customize & Order — 1 900 ₸
+                    </button>
+                </div>
+            </div>
+
+            <!-- Nutritional Information and Pricing Table -->
+            <h2 class="section-subtitle" style="margin-top: 50px;">Nutritional Info & Prices</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Spiciness</th>
+                            <th>Calories</th>
+                            <th>Base Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chefburger</td>
+                            <td>Mild 🌶️</td>
+                            <td>450 kcal</td>
+                            <td>1 800 ₸</td>
+                        </tr>
+                        <tr>
+                            <td>Twister Wrap</td>
+                            <td>Medium 🌶️🌶️</td>
+                            <td>520 kcal</td>
+                            <td>1 400 ₸</td>
+                        </tr>
+                        <tr>
+                            <td>Zinger Burger</td>
+                            <td>Spicy 🌶️🌶️🌶️</td>
+                            <td>480 kcal</td>
+                            <td>1 900 ₸</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Customization Modal (Hidden by default, triggered via JS) -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            
+            <div class="modal-body">
+                <!-- Left Column: Dynamic Dish Image Preview -->
+                <div class="modal-left">
+                    <div class="modal-img-container">
+                        <!-- Image source is dynamically updated by JS based on the selected item -->
+                        <img id="modal-dish-img" src="" alt="Dish Preview" class="modal-dish-img">
+                    </div>
+                </div>
+
+                <!-- Right Column: Ingredients and Total Price -->
+                <div class="modal-right">
+                    <h2 id="modal-dish-name">Customizing Dish</h2>
+                    <p class="modal-subtitle">Add or remove ingredients:</p>
+                    
+                    <div class="ingredients-list">
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked data-addon="0"> Tomatoes
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" checked data-addon="0"> Fresh Lettuce
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" data-addon="200"> Extra Cheese (+200 ₸)
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" data-addon="150"> Pickles (+150 ₸)
+                        </label>
+                        <label class="ingredient-item">
+                            <input type="checkbox" data-addon="100"> Extra Sauce (+100 ₸)
+                        </label>
+                    </div>
+
+                    <div class="modal-footer">
+                        <div class="total-price">Total: <span id="modal-total-price">1800</span> ₸</div>
+                        <button id="add-to-cart-btn" class="btn-red">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>Created by: <span>Zharkyn Akhmetov, Alnur Bakbergenov, Khantore Orynbassar</span> | Group: <span>SE-2510</span></p>
+            <p>&copy; 2026 KFC Kazakhstan Fan Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <div id="toast-notification" class="toast">Item added to cart!</div>
+</body>
+</html>

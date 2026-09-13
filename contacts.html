@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Project: KFC Kazakhstan Fan Project | Group: SE-2510 | Page: Reviews & Feedback Page (contacts.html) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KFC Kazakhstan — Reviews & Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="KFC Logo" class="logo-img">
+            </a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html" class="nav-btn">Main Menu</a></li>
+                    <li><a href="menu.html" class="nav-btn">Food Menu</a></li>
+                    <li><a href="promos.html" class="nav-btn">Special Offers</a></li>
+                    <li><a href="about.html" class="nav-btn">Our Team</a></li>
+                    <li><a href="schedule.html" class="nav-btn">Location & Schedule</a></li>
+                    <li><a href="contacts.html" class="nav-btn active">Reviews & Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Customer Reviews & Feedback</h1>
+            
+            <div class="reviews-page-grid">
+                
+                <!-- Section 1: Review Submission Form -->
+                <div class="review-form-container">
+                    <h2>Leave Your Feedback</h2>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="author-name">Your Name:</label>
+                            <input type="text" id="author-name" placeholder="e.g. Alikhan" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="author-email">Your Email:</label>
+                            <input type="email" id="author-email" placeholder="e.g. alikhan@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="rating-select">Rating:</label>
+                            <select id="rating-select" required>
+                                <option value="⭐⭐⭐⭐⭐">5 Stars (Excellent)</option>
+                                <option value="⭐⭐⭐⭐">4 Stars (Good)</option>
+                                <option value="⭐⭐⭐">3 Stars (Average)</option>
+                                <option value="⭐⭐">2 Stars (Poor)</option>
+                                <option value="⭐">1 Star (Terrible)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="review-message">Your Review:</label>
+                            <textarea id="review-message" rows="5" placeholder="Share your experience about food or service..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Submit Review</button>
+                    </form>
+                </div>
+
+                <!-- Section 2: Recent Reviews List -->
+                <div class="reviews-list-container">
+                    <h2>Recent Reviews</h2>
+                    <div id="reviews-feed" class="reviews-feed">
+                        
+                        <!-- Rendered feedback items -->
+                        <div class="feed-item">
+                            <div class="feed-header">
+                                <span class="feed-author">Artem Saharov</span>
+                                <span class="feed-stars">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="feed-text">"Best crispy wings in town! But I love popeyes more"</p>
+                            <span class="feed-date">September 12, 2026</span>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-header">
+                                <span class="feed-author">Aruzhan S.</span>
+                                <span class="feed-stars">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="feed-text">"Love the Calculus Retake discount! Food arrived hot and fresh."</p>
+                            <span class="feed-date">September 10, 2026</span>
+                        </div>
+
+                        <div class="feed-item">
+                            <div class="feed-header">
+                                <span class="feed-author">Burmalda</span>
+                                <span class="feed-stars">⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="feed-text">"Great Twister Wrap, but they ran out of toilet paper."</p>
+                            <span class="feed-date">September 08, 2026</span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>Created by: <span>Zharkyn Akhmetov, Alnur Bakbergenov, Khantore Orynbassar</span> | Group: <span>SE-2510</span></p>
+            <p>&copy; 2026 KFC Kazakhstan Fan Project. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

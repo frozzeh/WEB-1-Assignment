@@ -1,0 +1,409 @@
+/* ============================================================
+   KFC Kazakhstan — Shared Stylesheet
+   Team: Zharkyn Akhmetov, Alnur Bakbergenov, Khantore Orynbassar
+   Group SE-2510 | Palette: KFC red & white
+   ============================================================ */
+
+/* ---------- 1. Variables & Base ---------- */
+:root {
+    --red: #e4002b;
+    --red-dark: #c40024;
+    --ink: #111111;
+    --muted: #666666;
+    --soft: #f9f9f9;
+    --line: #e0e0e0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: var(--ink);
+    line-height: 1.5;
+}
+
+a { text-decoration: none; }
+ul { list-style: none; }
+textarea { resize: none; }
+.mt-50 { margin-top: 50px; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* ---------- 2. Header & Navigation ---------- */
+#main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { display: flex; align-items: center; }
+.logo-img { height: 85px; width: auto; display: block; }
+
+.nav-menu ul { display: flex; gap: 8px; align-items: center; }
+
+.nav-menu .nav-btn {
+    color: #222222;
+    font-weight: bold;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    padding: 12px 18px;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.nav-menu .nav-btn:hover { color: var(--red); }
+.nav-menu .nav-btn.active { background-color: var(--red); color: #ffffff; }
+
+/* ---------- 3. Main Content & Cards ---------- */
+.main-content { padding: 40px 0; min-height: 60vh; }
+
+.page-title { text-align: center; font-size: 2rem; margin-bottom: 30px; }
+.section-block { margin-bottom: 50px; }
+.section-subtitle { text-align: center; font-size: 1.8rem; margin-bottom: 25px; }
+
+.promo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.promo-card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title { font-size: 1.1rem; font-weight: bold; margin: 15px 0 10px; text-transform: uppercase; }
+.card-desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 20px; min-height: 40px; }
+
+/* ---------- 4. Buttons ---------- */
+.btn-red, .btn-submit {
+    display: block;
+    background-color: var(--red);
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-red:hover, .btn-submit:hover { background-color: var(--red-dark); }
+.btn-submit { padding: 12px 20px; width: 100%; }
+.btn-large { display: inline-block; padding: 12px 30px; font-size: 1rem; }
+.cta-center { text-align: center; margin-top: 20px; }
+
+/* ---------- 5. Story, News & Reviews (index) ---------- */
+.story-card {
+    background-color: var(--soft);
+    border-left: 5px solid var(--red);
+    padding: 30px;
+    border-radius: 6px;
+    margin: 40px 0;
+}
+
+.story-card h2 { color: var(--red); margin-bottom: 12px; }
+.story-card p { color: #444444; font-size: 1rem; line-height: 1.6; }
+
+.news-grid, .reviews-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.news-card, .review-card {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    min-width: 280px;
+}
+
+.news-card { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); }
+.review-card { border-color: #f0f0f0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+.news-date { font-size: 0.8rem; color: var(--red); font-weight: bold; }
+.news-card h3 { margin: 10px 0; font-size: 1.1rem; }
+.news-card p { color: var(--muted); font-size: 0.9rem; }
+
+.stars { letter-spacing: 2px; }
+.review-text { font-style: italic; color: #333333; margin: 10px 0; }
+.review-author { font-weight: bold; color: var(--red); font-size: 0.85rem; }
+
+/* ---------- 6. Tables ---------- */
+.table-container { overflow-x: auto; margin-top: 20px; }
+
+table { width: 100%; border-collapse: collapse; background-color: #ffffff; }
+table th, table td { padding: 12px 15px; border: 1px solid var(--line); text-align: left; }
+table th { background-color: var(--red); color: #ffffff; font-weight: bold; }
+table tr:nth-child(even) { background-color: var(--soft); }
+
+/* ---------- 7. Forms (contacts) ---------- */
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: #222222; }
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--red);
+}
+
+/* ---------- 8. Reviews Page Layout ---------- */
+.reviews-page-grid { display: flex; gap: 40px; margin-top: 20px; align-items: flex-start; }
+
+.review-form-container {
+    flex: 1;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.reviews-list-container { flex: 1.2; }
+
+.reviews-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 550px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.feed-item {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.feed-author { font-weight: bold; }
+.feed-text { color: #444444; font-size: 0.95rem; margin-bottom: 8px; }
+.feed-date { font-size: 0.75rem; color: #888888; }
+
+/* ---------- 9. Menu Page ---------- */
+.dish-img-container {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dish-img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.ingredient-list {
+    text-align: left;
+    margin: 10px 0 20px 20px;
+    flex-grow: 1;
+    font-size: 0.85rem;
+    color: #555555;
+}
+
+.ingredient-list li { margin-bottom: 4px; list-style-type: disc; }
+
+.steps-list { margin-left: 20px; color: #444444; line-height: 1.8; }
+.steps-list li { margin-bottom: 6px; }
+
+/* ---------- 10. Order Modal ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.modal-body { display: flex; gap: 25px; align-items: center; }
+.modal-left { flex: 1; display: flex; justify-content: center; align-items: center; }
+.modal-right { flex: 1.2; }
+
+.modal-img-container {
+    width: 100%;
+    height: 220px;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--soft);
+}
+
+.modal-dish-img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888888;
+    cursor: pointer;
+}
+
+.close-btn:hover { color: var(--red); }
+.modal-subtitle { color: var(--muted); font-size: 0.85rem; margin-bottom: 15px; }
+
+.ingredients-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+
+.ingredient-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    background: var(--soft);
+    border: 1px solid #eeeeee;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.ingredient-item input { accent-color: var(--red); width: 16px; height: 16px; }
+
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+}
+
+.total-price { font-size: 1.1rem; font-weight: bold; }
+
+/* ---------- 11. About / Team Page ---------- */
+.team-banner-container { text-align: center; margin-bottom: 30px; }
+
+.team-banner-img {
+    max-width: 512px;
+    width: 100%;
+    height: auto;
+    border: 5px solid var(--red);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-card { min-height: 440px; height: auto; }
+
+.avatar-container {
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--red);
+    background-color: var(--soft);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.avatar-img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+/* ---------- 12. Location & Schedule Page ---------- */
+.location-card {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px dashed var(--line);
+    align-items: center;
+}
+
+.location-map { flex: 1; max-width: 320px; width: 100%; }
+
+.location-map img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--red);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.location-details { flex: 2; width: 100%; }
+
+.location-details h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--red);
+    padding-left: 10px;
+}
+
+/* ---------- 13. Footer ---------- */
+footer {
+    background-color: var(--red);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.footer-container p { font-size: 0.9rem; margin: 4px 0; }
+.footer-container span { font-weight: bold; }
+
+/* ---------- 14. Animations & Responsive ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .reviews-page-grid, .location-card { flex-direction: column; align-items: stretch; }
+    .location-map { max-width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .modal-body { flex-direction: column; gap: 15px; }
+    .modal-img-container { height: 150px; }
+}
