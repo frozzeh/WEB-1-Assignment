@@ -1,93 +1,147 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <!-- Project: KFC Kazakhstan Fan Project | Group: SE-2510 | Page: Special Offers Page (promos.html) -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KFC Kazakhstan — Special Offers</title>
-    <link rel="stylesheet" href="css/style.css">
+<!-- Project: KFC Kazakhstan Fan Project | Group: SE-2510 | Page: Special Offers Page (promos.html) -->
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KFC Kazakhstan — Special Offers</title>
+<link href="css/style.css?v=promo-hover-unified-3" rel="stylesheet"/>
 </head>
 <body>
+<header id="main-header">
+<div class="header-container">
+<a class="logo" href="index.html">
+<!-- Placeholder for the main KFC Logo image -->
+<img alt="KFC Logo" class="logo-img" src="images/logo.jpg"/>
+</a>
+<nav class="nav-menu">
+<ul>
+<li><a class="nav-btn" href="index.html">Main Menu</a></li>
+<li><a class="nav-btn" href="menu.html">Food Menu</a></li>
+<li><a class="nav-btn active" href="promos.html">Special Offers</a></li>
+<li><a class="nav-btn" href="about.html">Our Team</a></li>
+<li><a class="nav-btn" href="schedule.html">Location &amp; Schedule</a></li>
+<li><a class="nav-btn" href="contacts.html">Reviews &amp; Feedback</a></li>
+<li><a class="nav-btn" href="gallery.html">Gallery</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="main-content">
+<div class="container">
+<h1 class="page-title">Hot Student Deals &amp; Promotions</h1>
+<section aria-label="Featured student offers" class="promo-hero"><div class="promo-hero-copy"><span class="promo-kicker">STUDENT SPECIALS</span><h2>Big flavor.<br/>Student-sized deals.</h2><p>Explore our legendary campus-inspired offers.</p><a class="promo-hero-link" href="#offers-list" id="explore-offers-btn">Explore offers ↓</a></div><img alt="Existing Friends Bucket promotion" src="images/student-special-combo.png"/></section><div class="promo-mini-banner"><img alt="Fries from our current menu" src="images/draft-free-combo.jpg"/><div><span class="promo-kicker">CAMPUS FAVORITES</span><h3>More reasons to take a study break.</h3><p>Discover the offers already on our menu.</p></div></div><div class="promo-grid" id="offers-list">
+<!-- Promo Card 1 -->
+<div class="promo-card">
+<!-- Promotional image: Calculus Retake -->
+<div class="dish-img-container">
+<img alt="Calculus Retake Relief" class="dish-img" src="images/calculus-combo.jpg"/>
+</div>
+<div class="card-title">Calculus Retake Relief</div>
+<p class="card-desc">Got a retake in Calculus? Get a 50% discount on your order!</p>
+<button class="btn-red offer-open" data-offer="calculus" type="button">Get Student Deal</button>
+</div>
+<!-- Promo Card 2 -->
+<div class="promo-card">
+<!-- Promotional image: Draft-Free Combo -->
+<div class="dish-img-container">
+<img alt="Draft-Free Combo Bonus" class="dish-img" src="images/campus-favorites.png"/>
+</div>
+<div class="card-title">Draft-Free Combo Bonus</div>
+<p class="card-desc">Are you 18+ but not serving yet and not enrolled? Get a FREE Combo — no military draft officers here!</p>
+<button class="btn-red offer-open" data-offer="draft" type="button">Get Free Combo</button>
+</div>
+<!-- Promo Card 3 -->
+<div class="promo-card">
+<!-- Promotional image: Friends Bucket -->
+<div class="dish-img-container">
+<img alt="Friends Bucket" class="dish-img" src="images/friends-bucket-combo.jpg"/>
+</div>
+<div class="card-title">Friends Bucket</div>
+<p class="card-desc">Order a large bucket with your classmates and get 25% OFF the total order.</p>
+<button class="btn-red offer-open" data-offer="friends" type="button">Get Discount</button>
+</div>
+</div>
+<section class="section-block">
+<h2 class="section-subtitle">How to Get a Student Deal</h2>
+<div class="story-card">
+<ol class="steps-list">
+<li>Choose your favorite promotion above.</li>
+<li>Click the offer button and read the promotion conditions.</li>
+<li>Complete the short form to generate a demo coupon.</li>
+<li>Copy your demo coupon code (not valid at real restaurants).</li>
+</ol>
+</div>
+</section>
+</div>
+</main>
+<section aria-label="Interactive website tools" class="assignment-tools"><div class="assignment-tools-inner"><span aria-label="Current date and time" id="live-clock" role="timer"></span><button class="assignment-btn" id="color-change-btn" type="button">Change Background Color</button><button class="assignment-btn" id="subscribe-open-btn" type="button">Subscribe</button></div></section><div aria-hidden="true" class="assignment-modal" id="subscribe-modal"><div aria-labelledby="subscribe-title" aria-modal="true" class="assignment-modal-dialog" role="dialog"><button aria-label="Close" class="assignment-modal-close" id="subscribe-close-btn" type="button">×</button><h2 id="subscribe-title">Subscribe to KFC Updates</h2><form id="subscribe-form" novalidate=""><label for="subscriber-name">Name</label><input autocomplete="name" id="subscriber-name" required="" type="text"/><label for="subscriber-email">Email</label><input autocomplete="email" id="subscriber-email" required="" type="email"/><p class="assignment-error" id="subscribe-error" role="alert"></p><button class="assignment-btn" type="submit">Subscribe</button><p id="subscribe-success" role="status"></p></form></div></div>
+<div id="offer-modal" class="assignment-modal" aria-hidden="true"><div class="assignment-modal-dialog offer-dialog" role="dialog" aria-modal="true" aria-labelledby="offer-title"><button type="button" class="assignment-modal-close" id="offer-close" aria-label="Close offer">×</button><div class="offer-layout"><img id="offer-photo" src="" alt="Promotion meal"><div><span class="team-eyebrow">STUDENT SPECIALS</span><h2 id="offer-title"></h2><p id="offer-description"></p><p class="offer-disclaimer">This is a student website demo. Coupons are not redeemable at real KFC restaurants.</p><form id="offer-form" novalidate><label for="offer-name">Your name</label><input id="offer-name" type="text" required maxlength="60" placeholder="Enter your name"><label for="offer-id" id="offer-id-label">Student ID / reference</label><input id="offer-id" type="text" required maxlength="30" placeholder="Enter your reference"><p class="assignment-error" id="offer-error" role="alert"></p><button class="btn-red" type="submit">Claim Demo Offer</button></form><div id="offer-result" class="offer-result" hidden><strong>✓ Demo offer claimed!</strong><p id="offer-code"></p><button id="offer-add-cart" class="btn-red" type="button">Add offer to cart</button> <button id="offer-copy" class="assignment-btn" type="button">Copy code</button></div></div></div></div></div>
+<footer>
+<div class="footer-container">
+<p>Created by: <span>Zharkyn Akhmetov, Alnur Bakbergenov, Khantore Orynbassar</span> | Group: <span>SE-2510</span></p>
+<p>© 2026 KFC Kazakhstan Fan Project. All Rights Reserved.</p>
+</div>
+</footer>
+<script src="js/cart.js"></script>
+<script src="js/script.js"></script>
 
-    <header id="main-header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <!-- Placeholder for the main KFC Logo image -->
-                <img src="images/logo.jpg" alt="KFC Logo" class="logo-img">
-            </a>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="index.html" class="nav-btn">Main Menu</a></li>
-                    <li><a href="menu.html" class="nav-btn">Food Menu</a></li>
-                    <li><a href="promos.html" class="nav-btn active">Special Offers</a></li>
-                    <li><a href="about.html" class="nav-btn">Our Team</a></li>
-                    <li><a href="schedule.html" class="nav-btn">Location & Schedule</a></li>
-                    <li><a href="contacts.html" class="nav-btn">Reviews & Feedback</a></li>
-                    <li><a href="gallery.html" class="nav-btn">Gallery</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<script>
+(() => {
+    const button = document.getElementById('explore-offers-btn');
+    const target = document.getElementById('offers-list');
 
-    <main class="main-content">
-        <div class="container">
-            <h1 class="page-title">Hot Student Deals & Promotions</h1>
-            
-            <div class="promo-grid">
-                <!-- Promo Card 1 -->
-                <div class="promo-card">
-                    <!-- Promotional image: Calculus Retake -->
-                    <div class="dish-img-container">
-                        <img src="images/kfc.jpg" alt="Calculus Retake Relief" class="dish-img">
-                    </div>
-                    <div class="card-title">Calculus Retake Relief</div>
-                    <p class="card-desc">Got a retake in Calculus? Get a 50% discount on your order!</p>
-                    <a href="contacts.html" class="btn-red">Get Student Deal</a>
-                </div>
+    if (!button || !target) return;
 
-                <!-- Promo Card 2 -->
-                <div class="promo-card">
-                    <!-- Promotional image: Draft-Free Combo -->
-                    <div class="dish-img-container">
-                        <img src="images/fries.jpg" alt="Draft-Free Combo Bonus" class="dish-img">
-                    </div>
-                    <div class="card-title">Draft-Free Combo Bonus</div>
-                    <p class="card-desc">Are you 18+ but not serving yet and not enrolled? Get a FREE Combo — no military draft officers here!</p>
-                    <a href="contacts.html" class="btn-red">Get Free Combo</a>
-                </div>
+    let animationId = null;
 
-                <!-- Promo Card 3 -->
-                <div class="promo-card">
-                    <!-- Promotional image: Friends Bucket -->
-                    <div class="dish-img-container">
-                        <img src="images/basket.jpg" alt="Friends Bucket" class="dish-img">
-                    </div>
-                    <div class="card-title">Friends Bucket</div>
-                    <p class="card-desc">Order a large bucket with your classmates and get 25% OFF the total order.</p>
-                    <a href="contacts.html" class="btn-red">Get Discount</a>
-                </div>
-            </div>
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
 
-            <section class="section-block">
-                <h2 class="section-subtitle">How to Get a Student Deal</h2>
-                <div class="story-card">
-                    <ol class="steps-list">
-                        <li>Choose your favorite promotion above.</li>
-                        <li>Fill in the feedback form on the Reviews page.</li>
-                        <li>Show your student ID at the restaurant counter.</li>
-                        <li>Enjoy your discounted meal!</li>
-                    </ol>
-                </div>
-            </section>
-        </div>
-    </main>
+        if (animationId !== null) {
+            cancelAnimationFrame(animationId);
+        }
 
-    <footer>
-        <div class="footer-container">
-            <p>Created by: <span>Zharkyn Akhmetov, Alnur Bakbergenov, Khantore Orynbassar</span> | Group: <span>SE-2510</span></p>
-            <p>&copy; 2026 KFC Kazakhstan Fan Project. All Rights Reserved.</p>
-        </div>
-    </footer>
+        const start = window.scrollY;
+        const header = document.getElementById('main-header');
+        const offset = (header?.offsetHeight || 0) + 20;
+
+        const destination =
+            target.getBoundingClientRect().top +
+            window.scrollY - offset;
+
+        const distance = destination - start;
+        const duration = 1200;
+        let startTime = null;
+
+        function animate(timestamp) {
+            if (startTime === null) startTime = timestamp;
+
+            const progress = Math.min(
+                (timestamp - startTime) / duration,
+                1
+            );
+
+            const eased = 0.5 - Math.cos(Math.PI * progress) / 2;
+
+            window.scrollTo({
+                top: start + distance * eased,
+                behavior: 'instant'
+            });
+
+            if (progress < 1) {
+                animationId = requestAnimationFrame(animate);
+            } else {
+                animationId = null;
+            }
+        }
+
+        animationId = requestAnimationFrame(animate);
+    }, true);
+})();
+</script>
 
 </body>
 </html>
