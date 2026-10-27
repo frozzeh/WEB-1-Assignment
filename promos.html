@@ -76,6 +76,37 @@
 </section>
 </div>
 </main>
+<section class="multi-step-section" aria-labelledby="quick-survey-title">
+  <div class="multi-step-card">
+    <h2 id="quick-survey-title">Build Your KFC Study Break</h2>
+    <p>Answer two quick steps to personalize your demo recommendation.</p>
+    <form id="study-break-form">
+      <div class="form-step" data-step="1">
+        <p class="step-indicator">Step 1 of 2: Your details</p>
+        <label for="survey-name">Your name</label>
+        <input id="survey-name" name="name" type="text" required minlength="2" autocomplete="name">
+        <label for="survey-email">Email</label>
+        <input id="survey-email" name="email" type="email" required autocomplete="email">
+        <button class="assignment-btn" id="survey-next" type="button">Next</button>
+      </div>
+      <div class="form-step" data-step="2" hidden>
+        <p class="step-indicator">Step 2 of 2: Your preference</p>
+        <label for="survey-preference">Choose your study break</label>
+        <select id="survey-preference" name="preference" required>
+          <option value="">Select an option</option>
+          <option value="burger">Burger</option>
+          <option value="wrap">Wrap</option>
+          <option value="sharing">Sharing bucket</option>
+        </select>
+        <div class="survey-actions">
+          <button class="assignment-btn" id="survey-back" type="button">Back</button>
+          <button class="assignment-btn" type="submit">Show recommendation</button>
+        </div>
+      </div>
+      <p id="survey-message" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 <section aria-label="Interactive website tools" class="assignment-tools"><div class="assignment-tools-inner"><span aria-label="Current date and time" id="live-clock" role="timer"></span><button class="assignment-btn" id="color-change-btn" type="button">Change Background Color</button><button class="assignment-btn" id="subscribe-open-btn" type="button">Subscribe</button></div></section><div aria-hidden="true" class="assignment-modal" id="subscribe-modal"><div aria-labelledby="subscribe-title" aria-modal="true" class="assignment-modal-dialog" role="dialog"><button aria-label="Close" class="assignment-modal-close" id="subscribe-close-btn" type="button">×</button><h2 id="subscribe-title">Subscribe to KFC Updates</h2><form id="subscribe-form" novalidate=""><label for="subscriber-name">Name</label><input autocomplete="name" id="subscriber-name" required="" type="text"/><label for="subscriber-email">Email</label><input autocomplete="email" id="subscriber-email" required="" type="email"/><p class="assignment-error" id="subscribe-error" role="alert"></p><button class="assignment-btn" type="submit">Subscribe</button><p id="subscribe-success" role="status"></p></form></div></div>
 <div id="offer-modal" class="assignment-modal" aria-hidden="true"><div class="assignment-modal-dialog offer-dialog" role="dialog" aria-modal="true" aria-labelledby="offer-title"><button type="button" class="assignment-modal-close" id="offer-close" aria-label="Close offer">×</button><div class="offer-layout"><img id="offer-photo" src="" alt="Promotion meal"><div><span class="team-eyebrow">STUDENT SPECIALS</span><h2 id="offer-title"></h2><p id="offer-description"></p><p class="offer-disclaimer">This is a student website demo. Coupons are not redeemable at real KFC restaurants.</p><form id="offer-form" novalidate><label for="offer-name">Your name</label><input id="offer-name" type="text" required maxlength="60" placeholder="Enter your name"><label for="offer-id" id="offer-id-label">Student ID / reference</label><input id="offer-id" type="text" required maxlength="30" placeholder="Enter your reference"><p class="assignment-error" id="offer-error" role="alert"></p><button class="btn-red" type="submit">Claim Demo Offer</button></form><div id="offer-result" class="offer-result" hidden><strong>✓ Demo offer claimed!</strong><p id="offer-code"></p><button id="offer-add-cart" class="btn-red" type="button">Add offer to cart</button> <button id="offer-copy" class="assignment-btn" type="button">Copy code</button></div></div></div></div></div>
 <footer>
@@ -86,62 +117,8 @@
 </footer>
 <script src="js/cart.js"></script>
 <script src="js/script.js"></script>
+<script src="js/assignment5.js"></script>
 
-<script>
-(() => {
-    const button = document.getElementById('explore-offers-btn');
-    const target = document.getElementById('offers-list');
-
-    if (!button || !target) return;
-
-    let animationId = null;
-
-    button.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-
-        if (animationId !== null) {
-            cancelAnimationFrame(animationId);
-        }
-
-        const start = window.scrollY;
-        const header = document.getElementById('main-header');
-        const offset = (header?.offsetHeight || 0) + 20;
-
-        const destination =
-            target.getBoundingClientRect().top +
-            window.scrollY - offset;
-
-        const distance = destination - start;
-        const duration = 1200;
-        let startTime = null;
-
-        function animate(timestamp) {
-            if (startTime === null) startTime = timestamp;
-
-            const progress = Math.min(
-                (timestamp - startTime) / duration,
-                1
-            );
-
-            const eased = 0.5 - Math.cos(Math.PI * progress) / 2;
-
-            window.scrollTo({
-                top: start + distance * eased,
-                behavior: 'instant'
-            });
-
-            if (progress < 1) {
-                animationId = requestAnimationFrame(animate);
-            } else {
-                animationId = null;
-            }
-        }
-
-        animationId = requestAnimationFrame(animate);
-    }, true);
-})();
-</script>
 
 </body>
 </html>
