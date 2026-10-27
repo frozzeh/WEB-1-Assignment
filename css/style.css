@@ -880,3 +880,35 @@ body .feed-item,
 body .feed-item:hover {
     border-left: 4px solid var(--red) !important;
 }
+
+
+/* ===== Assignment 5: interactive study-break form and keyboard focus ===== */
+.nav-menu .nav-btn:focus-visible {
+    outline: 3px solid #222;
+    outline-offset: 3px;
+}
+.time-greeting {
+    margin: 0 auto 12px;
+    padding: 10px 16px;
+    max-width: 1150px;
+    border-left: 4px solid var(--red);
+    background: #fff8f2;
+    font-weight: 700;
+    animation: greeting-appear 450ms ease-out;
+}
+@keyframes greeting-appear {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.multi-step-section { padding: 28px 16px 36px; background: #fff8f2; }
+.multi-step-card { max-width: 620px; margin: 0 auto; padding: 26px; background: #fff; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,.08); }
+.multi-step-card h2 { margin-top: 0; }
+.multi-step-card label { display: block; margin: 14px 0 6px; font-weight: 700; }
+.multi-step-card input, .multi-step-card select { width: 100%; padding: 11px; border: 1px solid #bbb; border-radius: 6px; font: inherit; }
+.multi-step-card button { margin-top: 16px; }
+.step-indicator { color: #a20f27; font-weight: 700; }
+.survey-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+#survey-message { min-height: 1.5em; font-weight: 700; }
+@media (prefers-reduced-motion: reduce) {
+    .time-greeting { animation: none; }
+}
